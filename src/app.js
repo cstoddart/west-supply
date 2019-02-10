@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Home } from './components/home';
+import { Router } from './router';
 import { context, defaultState } from './context';
 
 export class App extends Component {
@@ -17,11 +17,9 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
-        <context.Provider value={this.state}>
-          <Home />
-        </context.Provider>
-      </div>
+      <context.Provider value={this.state}>
+        <Router />
+      </context.Provider>
     );
   }
 }

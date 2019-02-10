@@ -4,4 +4,6 @@ export const context = createContext();
 
 export const defaultState = {
   products: [],
+  checkout: {},
+  updateContext: () => {},
 };

@@ -7,17 +7,16 @@ import { Product } from '../ui';
 export class Home extends Component {
   static contextType = context;
 
-  async componentDidMount() {
-    const products = await getProducts();
-    this.context.updateContext({ products });
+  componentDidMount() {
+    getProducts(this.context);
   }
 
   render() {
+    const products = this.context.products || [];
     return (
       <div>
-        Boats N Hoes
-        {this.context.products.map((product) => (
-          <Product productId={product.id} />
+        {products.map((product) => (
+          <Product key={product.id} productId={product.id} />
         ))}
       </div>
     );
