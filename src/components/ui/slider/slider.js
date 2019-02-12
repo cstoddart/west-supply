@@ -46,7 +46,6 @@ export class Slider extends Component {
       incomingSlide: undefined,
       isSliding: false,
     })), 700));
-    
   }
   
   previousSlide = () => {

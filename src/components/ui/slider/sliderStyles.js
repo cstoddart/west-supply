@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { siteWidth } from '../../../constants';
 import { Button } from '../button';
+import { SectionHeader } from '../sectionHeader';
 
 const toRight = keyframes`
   from {
@@ -47,11 +48,16 @@ export const StyledSlider = styled.div`
 `;
 
 export const SlideContainer = styled.div`
-  max-width: ${siteWidth * 0.95};
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  position: relative;
 `;
 
-export const CurrentSlide = styled.div``;
+export const CurrentSlide = styled.div`
+  height: 100%;
+  width: 100%;
+`;
 
 export const ExitingSlide = styled.div`
   position: absolute;
@@ -90,6 +96,7 @@ const SliderControl = styled.div`
   justify-content: center;
   height: 35px;
   width: 35px;
+  cursor: pointer;
 `;
 
 export const LeftArrow = styled(SliderControl)`
@@ -121,23 +128,11 @@ export const StyledSlideContent = styled.div`
   align-items: flex-start;
 `;
 
-export const StyledSlideTitle = styled.h1`
-  font-size: 22px;
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  letter-spacing: 1px;
+export const StyledSlideTitle = styled(SectionHeader)`
+  text-align: left;
 
   &:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 3px;
-    width: 50px;
-    background-color: black;
-    border-radius: 3px;
+    margin-left: 0;
   }
 `;
 

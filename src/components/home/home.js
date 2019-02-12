@@ -7,6 +7,8 @@ import leatherwork2 from '../../assets/images/leatherwork2.jpg';
 import {
   PageContainer,
   Product,
+  Section,
+  SectionHeader,
   Slider,
   Slide,
   SlideImage,
@@ -27,25 +29,27 @@ export class Home extends Component {
     const products = this.context.products || [];
     return (
       <PageContainer>
-        <Slider>
-          <Slide>
-            <SlideImage src={leatherwork1} />
-            <SlideContent>
-              <SlideTitle>Timeless Style</SlideTitle>
-              <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
-              <SlideButton to="/">See Our Goods ></SlideButton>
-            </SlideContent>
-          </Slide>
-          <Slide>
-            <SlideImage src={leatherwork2} />
-            <SlideContent>
-              <SlideTitle>Timeless Style</SlideTitle>
-              <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
-              <SlideButton to="/">See Our Goods ></SlideButton>
-            </SlideContent>
-          </Slide>
-        </Slider>
-        <h2>Featured Items</h2>
+        <Section>
+          <Slider>
+            <Slide>
+              <SlideImage src={leatherwork1} />
+              <SlideContent>
+                <SlideTitle>Timeless Style</SlideTitle>
+                <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
+                <SlideButton to="/">See Our Goods ></SlideButton>
+              </SlideContent>
+            </Slide>
+            <Slide>
+              <SlideImage src={leatherwork2} />
+              <SlideContent>
+                <SlideTitle>Timeless Style</SlideTitle>
+                <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
+                <SlideButton to="/">See Our Goods ></SlideButton>
+              </SlideContent>
+            </Slide>
+          </Slider>
+        </Section>
+        <SectionHeader>Featured Items</SectionHeader>
         {products.map((product) => (
           <Product key={product.id} productId={product.id} />
         ))}
