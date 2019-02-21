@@ -71,7 +71,6 @@ export class Slider extends Component {
   }
 
   render() {
-    console.log('children', this.props.children);
     return (
       <StyledSlider>
         <SlideContainer>

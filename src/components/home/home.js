@@ -5,6 +5,7 @@ import { context } from '../../context';
 import leatherwork1 from '../../assets/images/leatherwork1.jpg';
 import leatherwork2 from '../../assets/images/leatherwork2.jpg';
 import {
+  FeaturedProducts,
   PageContainer,
   Product,
   Section,
@@ -26,7 +27,6 @@ export class Home extends Component {
   }
 
   render() {
-    const products = this.context.products || [];
     return (
       <PageContainer>
         <Section>
@@ -49,10 +49,8 @@ export class Home extends Component {
             </Slide>
           </Slider>
         </Section>
-        <SectionHeader>Featured Items</SectionHeader>
-        {products.map((product) => (
-          <Product key={product.id} productId={product.id} />
-        ))}
+        <SectionHeader>The kind of tools that become a part of your everyday.</SectionHeader>
+        <FeaturedProducts />
       </PageContainer>
     );
   }

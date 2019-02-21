@@ -24,4 +24,9 @@ export const AppStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
+  #root {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 `;

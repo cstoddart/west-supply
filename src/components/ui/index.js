@@ -1,3 +1,4 @@
+export { FeaturedProducts } from './featuredProducts';
 export { Navigation } from './navigation';
 export { PageContainer } from './pageContainer';
 export { Product } from './product';

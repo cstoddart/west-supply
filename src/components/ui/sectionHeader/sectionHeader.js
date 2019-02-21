@@ -4,11 +4,12 @@ export const SectionHeader = styled.h2`
   text-transform: uppercase;
   position: relative;
   padding-bottom: 5px;
-  margin-bottom: 15px;
   text-align: center;
   font-weight: normal;
   font-size: 22px;
   letter-spacing: 1px;
+  max-width: 500px;
+  margin: 0 auto 15px;
 
   &:after {
     content: '';
