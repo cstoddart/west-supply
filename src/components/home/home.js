@@ -2,22 +2,14 @@ import React, { Component } from 'react';
 
 import { getProducts } from '../../services/shopify';
 import { context } from '../../context';
-import leatherwork1 from '../../assets/images/leatherwork1.jpg';
-import leatherwork2 from '../../assets/images/leatherwork2.jpg';
 import {
   FeaturedProducts,
   PageContainer,
   Product,
-  Section,
   SectionHeader,
-  Slider,
-  Slide,
-  SlideImage,
-  SlideContent,
-  SlideTitle,
-  SlideText,
-  SlideButton,
 } from '../ui';
+import { HomePageSlider } from './homePageSlider';
+import { HomePageStories } from './homePageStories';
 
 export class Home extends Component {
   static contextType = context;
@@ -29,28 +21,11 @@ export class Home extends Component {
   render() {
     return (
       <PageContainer>
-        <Section>
-          <Slider>
-            <Slide>
-              <SlideImage src={leatherwork1} />
-              <SlideContent>
-                <SlideTitle>Timeless Style</SlideTitle>
-                <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
-                <SlideButton to="/">See Our Goods ></SlideButton>
-              </SlideContent>
-            </Slide>
-            <Slide>
-              <SlideImage src={leatherwork2} />
-              <SlideContent>
-                <SlideTitle>Timeless Style</SlideTitle>
-                <SlideText>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</SlideText>
-                <SlideButton to="/">See Our Goods ></SlideButton>
-              </SlideContent>
-            </Slide>
-          </Slider>
-        </Section>
+        <HomePageSlider />
         <SectionHeader>The kind of tools that become a part of your everyday.</SectionHeader>
         <FeaturedProducts />
+        <SectionHeader>The moments, people, and places that inspire us.</SectionHeader>
+        <HomePageStories />
       </PageContainer>
     );
   }

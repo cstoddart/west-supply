@@ -129,11 +129,7 @@ export const StyledSlideContent = styled.div`
 `;
 
 export const StyledSlideTitle = styled(SectionHeader)`
-  text-align: left;
-
-  &:after {
-    margin-left: 0;
-  }
+  margin-bottom: 15px;
 `;
 
 export const StyledSlideText = styled.p`

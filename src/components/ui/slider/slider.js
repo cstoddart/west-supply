@@ -103,8 +103,8 @@ export const SlideContent = ({ children }) => (
   </StyledSlideContent>
 );
 
-export const SlideTitle = ({ children }) => (
-  <StyledSlideTitle>
+export const SlideTitle = ({ children, ...rest }) => (
+  <StyledSlideTitle {...rest}>
     {children}
   </StyledSlideTitle>
 );

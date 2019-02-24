@@ -1,31 +1,78 @@
 import styled from 'styled-components';
 
-export const StyledFeaturedProducts = styled.div`
+import { Section } from '../section'
+
+export const StyledFeaturedProducts = styled(Section)`
   display: flex;
   align-items: flex-start;
+  padding-bottom: 50px;
 `;
 
 export const FeaturedProduct = styled.div`
   min-width: 25%;
-  height: 350px;
-  background-image: url(${({ imageSource}) => imageSource});
-  background-size: cover;
-  background-position: center;
   transform: translateX(-250%);
+  cursor: pointer;
+  opacity: ${({ active }) => active ? 1 : 0.65};
+  transition: ${({ active }) => !active && 'opacity 0.5s ease'};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
   ${({ animating }) => animating === 'left' && `
-    transition: 0.7s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.5s ease;
     transform: translateX(-350%);
-  `};
+  `}
   ${({ animating }) => animating === 'leftTwo' && `
-    transition: 0.7s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.5s ease;
     transform: translateX(-450%);
-  `};
+  `}
   ${({ animating }) => animating === 'right' && `
-    transition: 0.7s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.5s ease;
     transform: translateX(-150%);
-  `};
+  `}
   ${({ animating }) => animating === 'rightTwo' && `
-    transition: 0.7s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.5s ease;
     transform: translateX(-50%);
-  `};
+  `}
+
+  ${({ active, animating }) => active && animating && `
+    ${FeaturedProductTitle} {
+      transition: opacity 0.5s ease, top 0.3s ease-out;
+    }
+  `}
+
+  ${({ active }) => active && `
+    ${FeaturedProductTitle} {
+      opacity: 1;
+      top: 100%;
+    }
+  `}
+    
+  &:hover {
+    opacity: 1;
+  }
+
+  &:hover ${FeaturedProductTitle} {
+    opacity: 1;
+    top: 100%;
+  }
+`;
+
+export const FeaturedProductImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
+
+export const FeaturedProductTitle = styled.h2`
+  opacity: 0;
+  position: absolute;
+  top: calc(100% - 50px);
+  text-align: center;
+  font-size: 20px;
+`;
+
+export const FeaturedProductLink = styled.a`
+  display: block;
+  font-size: 16px;
 `;

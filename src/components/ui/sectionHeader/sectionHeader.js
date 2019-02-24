@@ -1,26 +1,13 @@
-import styled from 'styled-components';
+import React, { Component } from 'react';
 
-export const SectionHeader = styled.h2`
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 5px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 22px;
-  letter-spacing: 1px;
-  max-width: 500px;
-  margin: 0 auto 15px;
+import { StyledSectionHeader } from './sectionHeaderStyles';
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 3px;
-    width: 50px;
-    background-color: black;
-    border-radius: 3px;
+export class SectionHeader extends Component {
+  render() {
+    return (
+      <StyledSectionHeader left={this.props.left ? 1 : 0} className={this.props.className}>
+        {this.props.children}
+      </StyledSectionHeader>
+    );
   }
-`;
+}
