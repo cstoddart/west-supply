@@ -19,6 +19,7 @@ export const StyledSectionHeader = styled.h1`
       margin: 0 auto;
       height: 3px;
       width: 25%;
+      max-width: 75px;
       background-color: black;
     }
   ` : null}
