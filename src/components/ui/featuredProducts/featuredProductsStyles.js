@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { Section } from '../section'
 
-export const StyledFeaturedProducts = styled(Section)`
+export const StyledFeaturedProducts = styled(Section).attrs({
+  fullWidth: true,
+})`
   display: flex;
   align-items: flex-start;
   padding-bottom: 50px;
@@ -72,7 +75,7 @@ export const FeaturedProductTitle = styled.h2`
   font-size: 20px;
 `;
 
-export const FeaturedProductLink = styled.a`
+export const FeaturedProductLink = styled(Link)`
   display: block;
   font-size: 16px;
 `;

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import logo from '../../../assets/images/logo.svg';
+import shoppingCart from '../../../assets/images/shoppingCart.svg';
 import {
   StyledNavigation,
+  NavigationLink,
   Logo,
   Left,
   Right,
+  ShoppingCartIcon,
 } from './navigationStyles';
 
 export class Navigation extends Component {
@@ -14,14 +16,16 @@ export class Navigation extends Component {
     return (
       <StyledNavigation>
         <Left>
-          <Link to="/">Home</Link>
-          <Link to="/">Shop</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
+          <NavigationLink to="/">Home</NavigationLink>
+          <NavigationLink to="/products">Shop</NavigationLink>
+          <NavigationLink to="/">About</NavigationLink>
+          <NavigationLink to="/">Contact</NavigationLink>
         </Left>
-        <Logo src={logo} />
+        <NavigationLink to="/">
+          <Logo src={logo} />
+        </NavigationLink>
         <Right>
-          <Link to="/cart">Cart</Link>
+          <NavigationLink to="/cart"><ShoppingCartIcon src={shoppingCart} />Cart</NavigationLink>
         </Right>
       </StyledNavigation>
     );

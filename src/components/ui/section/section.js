@@ -1,5 +1,18 @@
-import styled from 'styled-components';
+import React, { Component } from 'react';
 
-export const Section = styled.div`
-  margin-bottom: 100px;
-`;
+import {
+  StyledSection,
+} from './sectionStyles';
+
+export class Section extends Component {
+  render() {
+    return (
+      <StyledSection
+        fullWidth={this.props.fullWidth ? 1 : 0}
+        className={this.props.className}
+      >
+        {this.props.children}
+      </StyledSection>
+    );
+  }
+}

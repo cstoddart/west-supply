@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const StyledSectionHeader = styled.h1`
-  text-transform: uppercase;
   position: relative;
   padding-bottom: 5px;
   text-align: center;
-  font-weight: normal;
-  font-size: 22px;
+  font-weight: bold;
+  font-size: 30px;
   letter-spacing: 1px;
-  max-width: 500px;
-  margin: 0 auto 50px;
+  max-width: 600px;
+  margin: 0 auto 100px;
 
   &:after {
     content: '';
@@ -21,7 +20,6 @@ export const StyledSectionHeader = styled.h1`
     height: 3px;
     width: 50px;
     background-color: black;
-    border-radius: 3px;
   }
 
   ${({ left }) => left && `

@@ -10,6 +10,7 @@ import {
   StoryContent,
   StoryTitle,
   StoryDescription,
+  StoryLink,
 } from './homePageStoriesStyles';
 
 export class HomePageStories extends Component {
@@ -23,12 +24,14 @@ export class HomePageStories extends Component {
           <StoryContent>
             <StoryTitle>Story 1</StoryTitle>
             <StoryDescription>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</StoryDescription>
+            <StoryLink to="/">Read More</StoryLink>
           </StoryContent>
         </Story>
         <Story>
           <StoryContent>
             <StoryTitle>Story 2</StoryTitle>
             <StoryDescription>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</StoryDescription>
+            <StoryLink to="/">Read More</StoryLink>
           </StoryContent>
           <StoryImageContainer>
             <StoryImage imageSource={leatherwork2} />
@@ -41,6 +44,7 @@ export class HomePageStories extends Component {
           <StoryContent>
             <StoryTitle>Story 3</StoryTitle>
             <StoryDescription>Lorem ipsum dolor amet blog twee wayfarers vaporware meggings typewriter subway tile hashtag tumblr biodiesel copper mug ugh.</StoryDescription>
+            <StoryLink to="/">Read More</StoryLink>
           </StoryContent>
         </Story>
       </StyledHomePageStories>

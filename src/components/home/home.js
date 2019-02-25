@@ -4,8 +4,6 @@ import { getProducts } from '../../services/shopify';
 import { context } from '../../context';
 import {
   FeaturedProducts,
-  PageContainer,
-  Product,
   SectionHeader,
 } from '../ui';
 import { HomePageSlider } from './homePageSlider';
@@ -20,13 +18,13 @@ export class Home extends Component {
 
   render() {
     return (
-      <PageContainer>
+      <div>
         <HomePageSlider />
         <SectionHeader>The kind of tools that become a part of your everyday.</SectionHeader>
-        <FeaturedProducts />
+        <FeaturedProducts history={this.props.history} />
         <SectionHeader>The moments, people, and places that inspire us.</SectionHeader>
         <HomePageStories />
-      </PageContainer>
+      </div>
     );
   }
 }
