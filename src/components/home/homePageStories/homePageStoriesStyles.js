@@ -10,7 +10,7 @@ import {
 export const StyledHomePageStories = styled.div``;
 
 export const StoryImageContainer = styled.div`
-  height: 500px;
+  height: 600px;
   min-width: 65%;
   max-width: 65%;
   overflow: hidden;
