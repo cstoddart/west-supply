@@ -5,7 +5,11 @@ import { StyledSectionHeader } from './sectionHeaderStyles';
 export class SectionHeader extends Component {
   render() {
     return (
-      <StyledSectionHeader left={this.props.left ? 1 : 0} className={this.props.className}>
+      <StyledSectionHeader
+        left={this.props.left ? 1 : 0}
+        underline={this.props.underline ? 1 : 0}
+        className={this.props.className}
+      >
         {this.props.children}
       </StyledSectionHeader>
     );

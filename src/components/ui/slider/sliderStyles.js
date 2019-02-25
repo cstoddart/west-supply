@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-import { siteWidth } from '../../../constants';
 import { Button } from '../button';
 import { SectionHeader } from '../sectionHeader';
 
@@ -133,7 +132,7 @@ export const StyledSlideTitle = styled(SectionHeader)`
 `;
 
 export const StyledSlideText = styled.p`
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 `;
 
 export const StyledSlideButton = styled(Button)`

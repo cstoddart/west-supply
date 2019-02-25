@@ -1,12 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
 import rubikRegular from './assets/fonts/rubikRegular.ttf';
+import rubikBold from './assets/fonts/rubikBold.ttf';
 
 export const AppStyles = createGlobalStyle`
   @font-face {
     src: url(${rubikRegular});
     font-family: rubik;
-    font-weight: 400;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    src: url(${rubikBold});
+    font-family: rubik;
+    font-weight: bold;
   }
 
   body {
@@ -16,9 +23,18 @@ export const AppStyles = createGlobalStyle`
     line-height: 1.7;
   }
 
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+  
+  p {
+    margin: 0;
+    letter-spacing: 1px;
   }
 
   a {

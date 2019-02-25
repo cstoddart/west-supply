@@ -74,9 +74,9 @@ export class Slider extends Component {
     return (
       <StyledSlider>
         <SlideContainer>
-          { this.state.exitingSlide && <ExitingSlide direction={this.state.slideDirection}>{this.state.exitingSlide}</ExitingSlide>}
-          { this.state.currentSlide && <CurrentSlide>{this.state.currentSlide}</CurrentSlide>}
-          { this.state.incomingSlide && <IncomingSlide direction={this.state.slideDirection}>{this.state.incomingSlide}</IncomingSlide>}
+          {this.state.exitingSlide && <ExitingSlide direction={this.state.slideDirection}>{this.state.exitingSlide}</ExitingSlide>}
+          {this.state.currentSlide && <CurrentSlide>{this.state.currentSlide}</CurrentSlide>}
+          {this.state.incomingSlide && <IncomingSlide direction={this.state.slideDirection}>{this.state.incomingSlide}</IncomingSlide>}
         </SlideContainer>
         <SliderControls>
           <LeftArrow onClick={this.previousSlide}>{`<`}</LeftArrow>
@@ -104,7 +104,7 @@ export const SlideContent = ({ children }) => (
 );
 
 export const SlideTitle = ({ children, ...rest }) => (
-  <StyledSlideTitle {...rest}>
+  <StyledSlideTitle {...rest} underline>
     {children}
   </StyledSlideTitle>
 );

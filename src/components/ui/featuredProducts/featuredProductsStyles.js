@@ -78,4 +78,5 @@ export const FeaturedProductTitle = styled.h2`
 export const FeaturedProductLink = styled(Link)`
   display: block;
   font-size: 16px;
+  opacity: 0.6;
 `;

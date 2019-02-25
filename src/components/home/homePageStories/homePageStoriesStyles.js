@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import arrowHead from '../../../assets/images/arrowHead.svg';
-import { Section } from '../../ui';
+import {
+  Section,
+  SectionHeader,
+} from '../../ui';
   
 export const StyledHomePageStories = styled.div``;
 
@@ -30,7 +33,7 @@ export const StoryLink = styled(Link)`
   &:after {
     content: url(${arrowHead});
     display: block;
-    width: 12px;
+    width: 14px;
     height: auto;
     line-height: 1;
     position: absolute;
@@ -44,6 +47,15 @@ export const StoryLink = styled(Link)`
 export const Story = styled(Section)`
   display: flex;
   align-items: center;
+  
+  &:not(:last-of-type) {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+  
+  &:not(:first-of-type) {
+    padding-top: 50px;
+  }
 
   & > *:not(:last-child) {
     margin-right: 75px;
@@ -66,6 +78,14 @@ export const Story = styled(Section)`
 
 export const StoryContent = styled.div``;
 
-export const StoryTitle = styled.h1``;
+export const StoryTitle = styled(SectionHeader).attrs({
+  underline: true,
+  left: true,
+})`
+  margin-bottom: 20px;
+`;
 
-export const StoryDescription = styled.div``;
+export const StoryDescription = styled.p`
+  opacity: 0.6;
+  padding-bottom: 25px;
+`;
