@@ -33,12 +33,12 @@ export const StoryLink = styled(Link)`
   &:after {
     content: url(${arrowHead});
     display: block;
-    width: 14px;
+    width: 15px;
     height: auto;
     line-height: 1;
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 1px;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -67,7 +67,7 @@ export const Story = styled(Section)`
     }
 
     ${StoryLink} {
-      padding-left: 20px;
+      padding-left: 25px;
       
       &:after {
         opacity: 1;

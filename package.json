@@ -31,6 +31,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development --port 8080 --host 0.0.0.0",
     "build": "webpack --mode=production",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "push": "git push && npm run deploy"
   }
 }
