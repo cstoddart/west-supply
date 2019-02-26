@@ -9,9 +9,9 @@ export const StyledNavigation = styled.div`
   align-items: center;
   max-width: ${siteWidth};
   width: 95%;
-  margin: 0 auto 10px;
+  margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
 `;
 
 export const Logo = styled.img`

@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import arrowhead from '../../assets/images/arrowhead.svg';
 import { Section } from '../ui';
 
-export const StyledProducts = styled(Section)`
-  max-width: 650px;
+export const StyledProducts = styled(Section)``;
+
+export const ProductsImage = styled.div`
+  width: 100%;
+  height: 500px;
+  background-image: url(${({ imageSource }) => imageSource});
+  background-size: cover;
+  margin-bottom: 100px;
 `;
 
 export const ProductLink = styled(Link)`
@@ -29,7 +35,8 @@ export const ProductLink = styled(Link)`
 
 export const Product = styled.div`
   text-align: center;
-  margin-bottom: 100px;
+  margin: 0 auto 100px;
+  max-width: 650px;
   
   &:hover {
     ${ProductLink} {

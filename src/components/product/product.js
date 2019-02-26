@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 import { shopifyClient } from '../../shopifyClient';
+import {
+  StyledProduct,
+  Left,
+  Right,
+} from './productStyles';
 
 export class Product extends Component {
   state = {
@@ -27,12 +32,16 @@ export class Product extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.state.title}</h1>
-        <img style={{ width: '100%' }} src={this.state.images[0].src} />
-        <p>{this.state.description}</p>
-        <h3>{this.state.variants[0].price}</h3>
-      </div>
+      <StyledProduct>
+        <Left>
+          <img style={{ width: '100%' }} src={this.state.images[0].src} />
+        </Left>
+        <Right>
+          <h1>{this.state.title}</h1>
+          <p>{this.state.description}</p>
+          <h3>{this.state.variants[0].price}</h3>
+        </Right>
+      </StyledProduct>
     );
   }
 }
