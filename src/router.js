@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import { Navigation } from './components/ui';
+import { Navigation, Footer } from './components/ui';
 import { Home } from './components/home';
 import { Products } from './components/products';
 import { Product } from './components/product';
@@ -15,6 +15,7 @@ export const Router = () => (
       <Route exact path="/products" component={Products} />
       <Route path="/products/:handle" component={Product} />
       <Route path="/cart" component={Cart} />
+      <Footer />
     </Fragment>
   </BrowserRouter>
 );

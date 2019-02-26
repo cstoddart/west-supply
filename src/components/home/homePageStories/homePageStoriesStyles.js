@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import arrowHead from '../../../assets/images/arrowHead.svg';
+import arrowhead from '../../../assets/images/arrowhead.svg';
 import {
   Section,
   SectionHeader,
@@ -31,7 +31,7 @@ export const StoryLink = styled(Link)`
   position: relative;
   
   &:after {
-    content: url(${arrowHead});
+    content: url(${arrowhead});
     display: block;
     width: 15px;
     height: auto;

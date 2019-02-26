@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 import { shopifyClient } from '../../shopifyClient';
+import {
+  StyledProducts,
+  Product,
+  ProductTitle,
+  ProductDescription,
+  ProductLink,
+} from './productsStyles';
 
 export class Products extends Component {
   state = {
@@ -14,15 +21,16 @@ export class Products extends Component {
 
   render() {
     return (
-      <div>
+      <StyledProducts>
         {this.state.products.map((product) => (
-          <div key={product.id}>
-            <h1>{product.title}</h1>
+          <Product key={product.id}>
             <img style={{ width: '100%' }} src={product.images[0].src} />
-            <p>{product.description}</p>
-          </div>
+            <ProductTitle>{product.title}</ProductTitle>
+            <ProductDescription>{product.description}</ProductDescription>
+            <ProductLink to={`/products/${product.handle}`}>Buy Now</ProductLink>
+          </Product>
         ))}
-      </div>
+      </StyledProducts>
     );
   }
 }
