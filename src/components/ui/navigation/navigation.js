@@ -18,9 +18,23 @@ export class Navigation extends Component {
     showMobileNavigation: false,
   };
 
-  toggleMobileNavigation = () => this.setState((state) => ({ showMobileNavigation: !state.showMobileNavigation }));
+  toggleMobileNavigation = () => {
+    this.setState((state) => {
+      if (state.showMobileNavigation) {
+        document.body.style.overflow = "initial";
+      } else {
+        document.body.style.overflow = "hidden"
+      }
+      return {
+        showMobileNavigation: !state.showMobileNavigation,
+      };
+    });
+  };
   
-  hideMobileNavigation = () => this.setState({ showMobileNavigation: false });
+  hideMobileNavigation = () => {
+    document.body.style.overflow = "initial";
+    this.setState({ showMobileNavigation: false });
+  }
 
   render() {
     return (
@@ -57,7 +71,7 @@ export class Navigation extends Component {
             </NavigationLink>
             <NavigationLink to="/cart" onClick={this.hideMobileNavigation}>
               <ShoppingCartIcon src={shoppingCart} />Cart
-            </NavigationLink> 
+            </NavigationLink>
           </MobileNavigation>
         }
       </StyledNavigation>

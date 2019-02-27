@@ -77,13 +77,14 @@ export const MobileNavigation = styled.div`
 export const MobileNavigationIcon = styled.div`
   position: absolute;
   right: 0;
-  top: calc(50% - 5px);
+  top: 75px;
   z-index: 3;
   cursor: pointer;
   display: none;
   width: 20px;
   height: 2px;
   background-color: black;
+  margin-right: 15px;
   
   &:before,
   &:after {
@@ -109,7 +110,7 @@ export const MobileNavigationIcon = styled.div`
   ${({ active }) => active && `
     width: 25px;
     height: 25px;
-    top: calc(50% - 17.5px);
+    top: 65px;
     background-color: transparent;
     
     &:before {
