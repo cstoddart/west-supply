@@ -74,6 +74,30 @@ export const Story = styled(Section)`
       }
     }
   }
+  
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    
+    &:not(:last-of-type) {
+      margin-bottom: 100px;
+      padding-bottom: 0;
+    }
+
+    &:not(:last-of-type) {
+      padding-top: 0;
+    }
+    
+    &:nth-child(even) {
+      flex-direction: column-reverse;
+    }
+    
+    ${StoryImageContainer} {
+      margin-right: 0;
+      width: 100%;
+      height: 350px;
+      max-width: none;
+    }
+  }
 `;
 
 export const StoryContent = styled.div``;

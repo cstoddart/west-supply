@@ -17,6 +17,8 @@ export class FeaturedProducts extends Component {
     displayedProducts: [],
     activeIndex: 4,
     animating: false,
+    initialX: undefined,
+    translation: 0,
   };
 
   componentDidUpdate() {
@@ -44,14 +46,14 @@ export class FeaturedProducts extends Component {
     new Promise((resolve) => (
       this.setState({ animating: direction }, () => (
         setTimeout(
-          () => this.setState({ animating: false }, resolve),
+          () => this.setState({ animating: false, translation: 0, initialX: undefined }, resolve),
           300
         )
       ))
     ))
   );
 
-  handleClick = async ({ arrayIndex, productIndex, productHandle }) => {
+  changeFeaturedProduct = async ({ arrayIndex, productIndex, productHandle }) => {
     if (this.state.animating) return;
     this.setState({ activeIndex: productIndex });
     const length = this.state.featuredProducts.length;
@@ -63,23 +65,61 @@ export class FeaturedProducts extends Component {
     this.setDisplayedProducts(((productIndex + length) - 4) % length);
   };
 
+  handleTouchStart = (event) => this.setState({ initialX: event.touches[0].pageX });
+
+  handleTouchMove = (event) => {
+    if (!this.state.initialX) return;
+    const translation = event.touches[0].pageX - this.state.initialX;
+    this.setState({ translation });
+    if (translation < -100) {
+      this.changeFeaturedProduct({
+        arrayIndex: 5,
+        productIndex: this.state.displayedProducts[5].index,
+        productHandle: this.state.displayedProducts[5].handle,
+      });
+      this.setState({
+        initialX: undefined,
+        translation: 0,
+      });
+    } else if (translation > 100) {
+      this.changeFeaturedProduct({
+        arrayIndex: 3,
+        productIndex: this.state.displayedProducts[3].index,
+        productHandle: this.state.displayedProducts[3].handle,
+      });
+      this.setState({
+        initialX: undefined,
+        translation: 0,
+      });
+    }
+  }
+
+  handleTouchEnd = () => this.setState({
+    initialX: undefined,
+    translation: 0,
+  });
+
   render() {
     return (
       <StyledFeaturedProducts>
         {this.state.displayedProducts.map((product, index) => (
           <FeaturedProduct
             key={`${product.id}-${index}`}
-            onClick={() => this.handleClick({
+            onClick={() => this.changeFeaturedProduct({
               arrayIndex: index,
               productIndex: product.index,
               productHandle: product.handle,
             })}
             animating={this.state.animating}
             active={product.index === this.state.activeIndex}
+            onTouchStart={this.handleTouchStart}
+            onTouchMove={this.handleTouchMove}
+            onTouchEnd={this.handleTouchEnd}
+            translation={this.state.translation}
           >
             <FeaturedProductImage src={product.images[0].src} />
             <FeaturedProductTitle>
-              {product.title}
+              {product.index} - {product.title}
               <FeaturedProductLink to={`/products/${product.handle}`}>Learn More</FeaturedProductLink>
             </FeaturedProductTitle>
           </FeaturedProduct>
