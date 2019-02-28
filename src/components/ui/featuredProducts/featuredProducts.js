@@ -119,7 +119,7 @@ export class FeaturedProducts extends Component {
           >
             <FeaturedProductImage src={product.images[0].src} />
             <FeaturedProductTitle>
-              {product.index} - {product.title}
+              {product.title}
               <FeaturedProductLink to={`/products/${product.handle}`}>Learn More</FeaturedProductLink>
             </FeaturedProductTitle>
           </FeaturedProduct>
