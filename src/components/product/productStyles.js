@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-import { Section } from '../ui';
+import {
+  Section,
+  Button,
+} from '../ui';
 
 export const StyledProduct = styled(Section)`
   display: flex;
@@ -14,4 +17,8 @@ export const Left = styled.div`
 
 export const Right = styled.div`
   width: 40%;
+`;
+
+export const AddToCartButton = styled(Button)`
+  margin-top: 25px;
 `;

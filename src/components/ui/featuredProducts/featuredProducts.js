@@ -70,6 +70,7 @@ export class FeaturedProducts extends Component {
   handleTouchMove = (event) => {
     if (!this.state.initialX) return;
     const translation = event.touches[0].pageX - this.state.initialX;
+    if (Math.abs(translation) < 10) return;
     this.setState({ translation });
     if (translation < -100) {
       this.changeFeaturedProduct({

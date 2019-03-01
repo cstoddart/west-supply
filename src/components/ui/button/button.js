@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Button = styled(Link)`
-  padding: 15px 25px;
-  background-color: black;
-  color: white;
-  display: inline-block;
-`;
+import { StyledButton } from './buttonStyles';
+
+export const Button = (props) => (
+  <Fragment>
+    {props.to
+      ? <StyledButton to={props.to} {...props}>{props.children}</StyledButton>
+      : <StyledButton as="button" {...props}>{props.children}</StyledButton>
+    }
+  </Fragment>
+);

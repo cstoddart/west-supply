@@ -1,3 +1,4 @@
+export { Button } from './button';
 export { FeaturedProducts } from './featuredProducts';
 export { Footer } from './footer';
 export { Navigation } from './navigation';

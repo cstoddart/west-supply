@@ -88,6 +88,7 @@ export const FeaturedProduct = styled.div`
 export const FeaturedProductImage = styled.img`
   width: 100%;
   height: auto;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0) !important;
 `;
 
 export const FeaturedProductTitle = styled.h2`

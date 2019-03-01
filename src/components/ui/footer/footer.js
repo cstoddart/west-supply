@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 
-import { StyledFooter } from './footerStyles';
+import {
+  StyledFooter,
+  Left,
+  Right,
+  TexasIcon,
+} from './footerStyles';
 
 export class Footer extends Component {
   render() {
     return (
       <StyledFooter>
-        © {new Date().getFullYear()} West Supply Co.
+        <Left>
+          © {new Date().getFullYear()} West Supply Co.
+        </Left>
+        |
+        <Right>
+          Made In <TexasIcon />
+        </Right>
       </StyledFooter>
     );
   }
